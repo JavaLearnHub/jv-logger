@@ -1,32 +1,17 @@
 package mate.academy.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
+
     private String title;
     private BigDecimal price;
 
-    public Product() {
-    }
-
-    public Product(String title, BigDecimal price) {
-        this.title = title;
-        this.price = price;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
 }

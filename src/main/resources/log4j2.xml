@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Extra logging related to initialization of Log4j.
+ Set to debug or trace if log4j initialization is failing. -->
+<Configuration status="info">
+    <Appenders>
+        <!-- Console appender configuration -->
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </Console>
+        <File name="LogToFile" fileName="logs/app.log">
+            <PatternLayout>
+                <Pattern>%d %p %c %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- Root logger referring to console appender -->
+        <Logger name="mate.academy" level="info" additivity="false">
+            <AppenderRef ref="LogToFile" />
+        </Logger>
+        <Logger name="mate.academy" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole" />
+        </Logger>
+        <Root level="error" additivity="false">
+            <AppenderRef ref="LogToConsole" />
+            <AppenderRef ref="LogToFile" />
+        </Root>
+    </Loggers>
+</Configuration>
